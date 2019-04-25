@@ -1,0 +1,39 @@
+header {
+  z-index: 2;
+  h1 {
+    position: absolute;
+    transform: translate(-50%, 0%);
+    left: 50%;
+    top: 5%;
+    color: @light;
+    background-color: @dark;
+    font-size: 5rem;
+    padding: 0.5rem 3rem;
+    border-radius: 10rem;
+
+    white-space: nowrap;
+  }
+
+  nav {
+    position: absolute;
+    height: 6.5rem;
+    width: 6.5rem;
+    top: 5%;
+    left: 5%;
+    border-radius: 100%;
+    background-color:@dark;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 2.25rem 0;
+
+    div {
+      background-color: @light;
+      width: 45%;
+      height: 20%;
+    }
+  }
+}

@@ -1,0 +1,54 @@
+section.info-card {
+  position: relative;
+  left: 5%;
+  width: 35%;
+  height: 55%;
+  min-width: 350px;
+
+  border-radius: 4rem;
+
+    .front-card {
+      position: absolute;
+      background-color: @dark;
+      padding: 2rem;
+      height: 100%;
+      width: 100%;
+      z-index: 2;
+      border-radius: 1.5rem;
+
+      color: @light;
+
+      overflow: hidden;
+
+      h2 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+      }
+
+      p {
+        margin-top: 1rem;
+        font-size: 1.25rem;
+        line-height: 1.5rem;
+      }
+
+      div {
+        margin: auto;
+        text-align: center;
+        
+        img {
+          max-width: 100%;
+          max-height: 12rem;
+        }
+      }
+      
+    }
+
+    .backer-card {
+      position: absolute;
+      background-color: @primary;
+      transform: rotate(-20deg);
+      height: 100%;
+      width: 100%;
+      border-radius: 1.5rem;
+    }
+  }

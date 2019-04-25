@@ -1,3 +1,10 @@
+
+@import './variables.less';
+@import './header.less';
+@import './image.less';
+@import './cta.less';
+@import './info-card.less';
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -5,28 +12,16 @@
 }
 
 body {
-  background-color: cadetblue;
   width: 100vw;
   height: 100vh;
   display: flex;
+  font-family: 'Montserrat', sans-serif;
 
-  header {
-    h1 {
-      position: absolute;
-      transform: translate(-50%, 0%);
-      left: 50%;
-      top: 5%;
-      color: antiquewhite;
-      background-color: black;
-      font-size: 5rem;
-      padding: 0.5rem 3rem;
-      border-radius: 10rem;
-
-      white-space: nowrap;
-    }
+  h1, h2 {
+    font-family: 'Courgette', cursive;
   }
 
-  .info-cta-container {
+  section.info-cta-container {
     position: relative;
     flex: 1;
     
@@ -35,78 +30,5 @@ body {
     align-items: center;
 
     padding: 5% 10% 0;
-
-
-    section.info-card {
-    position: relative;
-    // bottom: 45%;
-    left: 5%;
-    // transform: translate(-50%, 50%);
-    width: 30%;
-    height: 50%;
-    margin-right: 0;
-
-    min-width: 350px;
-
-      .front-card {
-        position: absolute;
-        background-color: plum;
-        padding: 10px 20px;
-        height: 100%;
-        width: 100%;
-        z-index: 2;
-
-        h2 {
-          font-size: 2.5rem;
-        }
-
-        p {
-          font-size: 1.25rem;
-          line-height: 1.5rem;
-        }
-      }
-
-      .backer-card {
-        position: absolute;
-        background-color: black;
-        transform: rotate(-20deg);
-        height: 100%;
-        width: 100%;
-      }
-    }
-
-    section.cta {
-      position: relative;
-      //transform: translate(50%, 50%);
-      width: 50%;
-      min-width: 500px;
-      background-color: darkgray;
-      //right: 30%;
-      //bottom: 50%;
-      padding: 2rem 1.5rem;
-
-      margin: 0;
-
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: space-around;
-
-      h2 {
-        font-size: 3rem;
-        text-align: center;
-        margin-bottom: 2rem;
-      }
-
-      button {
-      font-size: 4rem;
-      padding: 1.5rem;
-      border-radius: 2rem;
-      }
-    }
   }
-
-  
-
-  
 }
