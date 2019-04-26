@@ -1,4 +1,4 @@
-import { GOTO_INDEX, INC_INDEX, DEC_INDEX } from './actions';
+import { GOTO_INDEX, INC_INDEX, DEC_INDEX } from './types';
 
 export const reducer  = (state, action = {type: null }) => {
   const { currentIndex, slideCount } = state;

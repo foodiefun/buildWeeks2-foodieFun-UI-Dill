@@ -1,8 +1,5 @@
 import { dispatch } from './store';
-
-export const GOTO_INDEX = 'GOTO_INDEX';
-export const INC_INDEX = 'INC_INDEX';
-export const DEC_INDEX = 'DEC_INDEX';
+import { GOTO_INDEX, INC_INDEX, DEC_INDEX } from './types'
 
 export const gotoIndex = dispatch(payload => ({  
   type: GOTO_INDEX,
