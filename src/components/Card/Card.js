@@ -8,7 +8,7 @@ export default class Card {
     this.currentIndex = null;
     this.subscription = store.subscribe((state) => {
       console.group(`CARD ${this.index}`);
-      console.log(state);
+      //console.log(state);
 
       const {currentIndex: newIndex} = state;
 
@@ -33,9 +33,11 @@ export default class Card {
 
   slideOut () {
     console.log('leaving');
+    this.element.classList.add('hidden');
   }
 
   slideIn () {
     console.log('entering');
+    this.element.classList.remove('hidden');
   }
 }

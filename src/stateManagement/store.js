@@ -3,11 +3,13 @@ import { scan } from 'rxjs/operators';
 import { reducer } from './reducers';
 
 const initialState = {
-  currentIndex: 0,
+  currentIndex: -1,
   slideCount: 6
 };
 
-const action = new BehaviorSubject();
+const action = new BehaviorSubject({
+  type: 'INC_INDEX'
+});
 
 export const store = action.pipe(
   scan(reducer, initialState),
