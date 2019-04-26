@@ -5,7 +5,7 @@ import { gotoIndex, incIndex, decIndex } from './stateManagement/actions';
 
 
 
-document.body.querySelectorAll('.info-card')
+document.body.querySelectorAll('.card-track section.info-card')
   .forEach((e, i) => {
     Card(e, i, "Card");
   });
