@@ -1,6 +1,7 @@
 import './less/index.less';
 
 import Card from './components/Card/Card';
+import ImageSlide from './components/ImageSlide/ImageSlide';
 import { gotoIndex, incIndex, decIndex } from './stateManagement/actions';
 
 
@@ -8,6 +9,11 @@ import { gotoIndex, incIndex, decIndex } from './stateManagement/actions';
 document.body.querySelectorAll('.card-track section.info-card')
   .forEach((e, i) => {
     Card(e, i, "Card");
+  });
+
+document.body.querySelectorAll('section.image-container img')
+  .forEach((e, i) => {
+    ImageSlide(e, i, "ImageSlide");
   });
 
 // gotoIndex(3);
