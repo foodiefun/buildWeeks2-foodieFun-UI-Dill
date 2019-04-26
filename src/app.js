@@ -1,24 +1,14 @@
 import './less/index.less';
 
 import Card from './components/Card/Card';
-import { store } from './stateManagement/store';
 import { gotoIndex, incIndex, decIndex } from './stateManagement/actions';
 
 
 
 document.body.querySelectorAll('.info-card')
   .forEach((e, i) => {
-    new Card(e, i);
+    Card(e, i, "Card");
   });
-
-
-//new Card({}, 1);
-
-// store.subscribe(state => {
-//   console.group('STATE - app.js');
-//   console.log(state);
-//   console.groupEnd();
-// });
 
 // gotoIndex(3);
 // gotoIndex(4);
