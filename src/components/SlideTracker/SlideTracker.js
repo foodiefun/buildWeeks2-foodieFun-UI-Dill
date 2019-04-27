@@ -1,5 +1,5 @@
 import { store } from '../../stateManagement/store';
-import { incIndex, decIndex } from '../../stateManagement/actions';
+import { incIndex, decIndex, gotoIndex } from '../../stateManagement/actions';
 
 export default class SlideTracker {
   constructor (element) {
@@ -25,11 +25,18 @@ export default class SlideTracker {
       console.group(this.type);
       console.log('moving to', newIndex);
       console.groupEnd();
-      
+
       this.currentIndex = newIndex;
     });
 
     this.buttonInc.addEventListener('click', incIndex);
     this.buttonDec.addEventListener('click', decIndex);
+
+    this.element.querySelector('ol.tracker-list')
+      .addEventListener('click', e => {
+        if(e.target.classList.contains('tracker-dot')) {
+          gotoIndex(parseInt(e.target.dataset.index));
+        }
+      });
   }
 }
