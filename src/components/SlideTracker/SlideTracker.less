@@ -1,0 +1,38 @@
+section.tracker-container {
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-right: 2%;
+
+  div.slide-tracker {
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    ol.tracker-list {
+      height: 70%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      li.tracker-dot {
+        height: 2rem;
+        width: 2rem;
+        border-radius: 100%;
+        background: red;
+        list-style: none;
+      }
+
+      li.active-dot {
+        background: blue;
+      }
+    }
+
+    button.tracker-button {
+      background: blue;
+    }
+  }
+}

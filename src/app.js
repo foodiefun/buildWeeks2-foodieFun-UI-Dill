@@ -2,6 +2,7 @@ import './less/index.less';
 
 import Card from './components/Card/Card';
 import ImageSlide from './components/ImageSlide/ImageSlide';
+import SlideTracker from './components/SlideTracker/SlideTracker';
 import { gotoIndex, incIndex, decIndex } from './stateManagement/actions';
 
 
@@ -16,34 +17,9 @@ document.body.querySelectorAll('section.image-container img')
     ImageSlide(e, i, "ImageSlide");
   });
 
-// gotoIndex(3);
-// gotoIndex(4);
-// gotoIndex(5);
+new SlideTracker(document.body.querySelector('.slide-tracker'));
 
-// incIndex();
-// decIndex();
-
-// incIndex();
-// incIndex();
-// incIndex();
-// decIndex();
-
-// setInterval(() => {
-//   incIndex();
-// }, 1000);
 
 setInterval(() => {
   incIndex();
-}, 2000);
-
-// setTimeout(() => {
-//   gotoIndex(4);
-// }, 2500);
-
-// setTimeout(() => {
-//   gotoIndex(2);
-// }, 4000);
-
-// setTimeout(() => {
-//   gotoIndex(5);
-// }, 6000);
+}, 8000);
