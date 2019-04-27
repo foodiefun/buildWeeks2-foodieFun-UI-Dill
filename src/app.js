@@ -32,18 +32,18 @@ document.body.querySelectorAll('section.image-container img')
 //   incIndex();
 // }, 1000);
 
-// setInterval(() => {
-//   decIndex();
-// }, 2000);
+setInterval(() => {
+  incIndex();
+}, 2000);
 
-setTimeout(() => {
-  gotoIndex(4);
-}, 2500);
+// setTimeout(() => {
+//   gotoIndex(4);
+// }, 2500);
 
-setTimeout(() => {
-  gotoIndex(2);
-}, 4000);
+// setTimeout(() => {
+//   gotoIndex(2);
+// }, 4000);
 
-setTimeout(() => {
-  gotoIndex(5);
-}, 6000);
+// setTimeout(() => {
+//   gotoIndex(5);
+// }, 6000);
