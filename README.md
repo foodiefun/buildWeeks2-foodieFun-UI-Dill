@@ -1,5 +1,9 @@
 # Tim's landing page for Foodie Fun
 
+## Deployed to Heroku!
+
+Check out the latest build at https://damp-harbor-72623.herokuapp.com/
+
 ## Mockup
 
 I threw this together in Illustrator to play around with some ideas, and decide (roughly) what I want to build.  I'll probably end up with something a bit different (I'm really not satisfied with how the CTA component looks here), but this is an approximation of the layout I'd like to create, and colors I will use.  The fonts will be changing.
