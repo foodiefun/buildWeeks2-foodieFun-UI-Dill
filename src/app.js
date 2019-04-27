@@ -20,6 +20,6 @@ document.body.querySelectorAll('section.image-container img')
 new SlideTracker(document.body.querySelector('.slide-tracker'));
 
 
-setInterval(() => {
-  incIndex();
-}, 8000);
+// setInterval(() => {
+//   incIndex();
+// }, 8000);
