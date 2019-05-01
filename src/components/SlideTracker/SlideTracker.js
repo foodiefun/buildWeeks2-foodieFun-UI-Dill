@@ -8,6 +8,7 @@ export default class SlideTracker {
     this.currentIndex = null;
 
     this.slideDots = this.element.querySelectorAll('.tracker-list li.tracker-dot');
+    console.log(this.slideDots);
 
     this.buttonInc = this.element.querySelector('#tracker-inc');
     this.buttonDec = this.element.querySelector('#tracker-dec');
