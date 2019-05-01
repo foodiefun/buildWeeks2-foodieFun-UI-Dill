@@ -12,6 +12,10 @@ section.tracker-container {
     order: 2;
   }
 
+  @media @phone-large {
+    margin-top: 3rem;
+  }
+
   div.slide-tracker {
     height: 60%;
     display: flex;
@@ -38,6 +42,10 @@ section.tracker-container {
         width: 70%;
       }
 
+      @media @phone-large {
+        width: 85%;
+      }
+
       li.tracker-dot {
         height: 2rem;
         width: 2rem;
@@ -52,6 +60,10 @@ section.tracker-container {
         align-items: center;
 
         cursor: pointer;
+
+        @media @phone-large {
+          transform: scale(0.8);
+        }
       }
 
       li.active-dot {
@@ -69,6 +81,10 @@ section.tracker-container {
         @media @tablet-large {
           transform: rotate(90deg);
         }
+
+        @media @phone-large {
+          transform: rotate(90deg) scale(0.6);
+        }
       }
     }
 
@@ -83,6 +99,10 @@ section.tracker-container {
 
       @media @tablet-large {
         transform: rotate(-90deg);
+      }
+
+      @media @phone-large {
+        font-size: 2rem;
       }
     }
   }
