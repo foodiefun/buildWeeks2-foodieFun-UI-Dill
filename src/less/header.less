@@ -4,6 +4,8 @@ header {
   display: flex;
   justify-content: center;
   margin-top: 3rem;
+  width: 100vw;
+  /* Fix for same bug as explained in index.less*/
 
   @media @tablet {
     margin-top: 2rem;
@@ -41,8 +43,8 @@ header {
 
   nav {
     position: absolute;
-    height: 6.5rem;
-    width: 6.5rem;
+    height: 6rem;
+    width: 6rem;
     left: 5%;
     border-radius: 100%;
     background-color:@dark;
@@ -52,7 +54,7 @@ header {
     justify-content: space-between;
     align-items: center;
 
-    padding: 2.25rem 0;
+    padding: 2rem 0;
 
     @media @tablet {
       width: 5.5rem;

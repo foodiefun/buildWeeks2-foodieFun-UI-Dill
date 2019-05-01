@@ -1,4 +1,4 @@
-import {TweenMax} from 'gsap/TweenMax';
+import { TweenMax } from 'gsap/TweenMax';
 import Slideable from '../base/Slideable';
 
 function slideOut (myIndex, newIndex) {
@@ -16,6 +16,8 @@ function slideOut (myIndex, newIndex) {
 }
 
 function slideIn (myIndex, oldIndex) {
+  if (oldIndex === null) return; // No animation on first page load.
+
   const dir = (myIndex < oldIndex) ? -50 : 150;
   
   this.element.classList.remove('hidden');

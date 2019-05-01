@@ -1,61 +1,36 @@
+import { TweenMax } from 'gsap/TweenMax';
 import Slideable from '../base/Slideable';
 
-function slideOut () {
+function slideOut (myIndex, newIndex) {
+  const dir = (myIndex < newIndex) ? -150 : 150;
+
+  this.element.style.cssText = 'position: absolute';
+  TweenMax.to(this.element, 6, {
+    top: `${dir}%`,
+    onComplete: () => {
+      this.element.classList.add('hidden');
+      this.element.style.cssText = '';
+    }
+  });
   console.log('leaving');
-  this.element.classList.add('hidden');
 }
 
-function slideIn () {
-  console.log('entering');
+function slideIn (myIndex, oldIndex) {
+  if (oldIndex === null) return; // No animation on first page load.
+
+  const dir = (myIndex < oldIndex) ? -150 : 150;
+  
   this.element.classList.remove('hidden');
+  TweenMax.from(this.element, 6, {
+    top: `${dir}%`,
+    onComplete: () => {
+      this.element.style.cssText = '';
+    }
+  });
+
+  console.log('entering');
 }
 
 export default (element, index, type) => {
   return new Slideable(element, index, slideIn, slideOut, type);
 }
-
-
-
-// export default class Card {
-//   constructor (element, index, slideIn, slideOut, type) {
-//     this.element = element;
-//     this.index = index;
-//     this.type = type; // Just a string to make the logs more verbose
-
-//     this.currentIndex = null;
-//     this.subscription = store.subscribe((state) => {
-//       const {currentIndex: newIndex} = state;
-
-//       if (this.currentIndex === newIndex) { // Looks like something broke, update local state, but don't do anything else.
-//         this.currentIndex = newIndex;
-//         return; 
-//       }
-
-//       if (this.index === newIndex) { // Newly selected, set up and execute in-transition.
-//         console.group(`CARD ${this.index}`);
-//         this.slideIn();
-//         console.groupEnd();
-//       }
-//       if (this.index === this.currentIndex) { // Already on screen, set up and execute out-transition.
-//         console.group(`CARD ${this.index}`);
-//         this.slideOut();
-//         console.groupEnd();
-//       }
-
-//       this.currentIndex = newIndex; // Update local state to test against next time
-//     });
-
-//     this.slideIn = slideIn;
-//     this.slideOut = slideOut;
-//   }
-
-//   slideOut () {
-//     console.log('leaving');
-//     this.element.classList.add('hidden');
-//   }
-
-//   slideIn () {
-//     console.log('entering');
-//     this.element.classList.remove('hidden');
-//   }
-// }

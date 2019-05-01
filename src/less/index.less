@@ -30,6 +30,7 @@ body {
   
   display: flex;
   flex-direction: column;
+  overflow-y: hidden;
 
   @media @tablet-large {
     height: auto;
@@ -47,22 +48,25 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 0 3%;
 
-    padding: 0 3% 0;
-
+    width: 100vw;
+    /* I had a very odd bug when I introduced Greensock.  During tweens, many elements unrelated to the animation would shrink and shift
+       left by a small (but noticable) amount.  Still not sure why.  But setting their width to 100vw seems to solve it.  Particularly odd
+       and frustrating because the animation is entirely related to position, it should not affect the width of anything.*/
+    
     @media @tablet-large {
       flex-direction: column;
+      padding: 0 20%;
       padding-bottom: 4rem;
-      width: 60%;
-      margin: auto;
     }
 
     @media @tablet {
-      width: 75%;
+      padding: 0 12.5%;
     }
     
     @media @phone-large {
-      width: 90%;
+      padding: 0 5%;
     }
 
     @media @phone-small {
