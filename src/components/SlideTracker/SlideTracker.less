@@ -16,6 +16,10 @@ section.tracker-container {
     margin-top: 3rem;
   }
 
+  @media @phone-small {
+    margin-top: 2rem;
+  }
+
   div.slide-tracker {
     height: 60%;
     display: flex;
@@ -64,6 +68,10 @@ section.tracker-container {
         @media @phone-large {
           transform: scale(0.8);
         }
+
+        @media @phone-small {
+          transform: scale(0.6);
+        }
       }
 
       li.active-dot {
@@ -85,6 +93,10 @@ section.tracker-container {
         @media @phone-large {
           transform: rotate(90deg) scale(0.6);
         }
+
+        @media @phone-small {
+          transform: rotate(90deg) scale(0.4);
+        }
       }
     }
 
@@ -103,6 +115,10 @@ section.tracker-container {
 
       @media @phone-large {
         font-size: 2rem;
+      }
+
+      @media @phone-small {
+        font-size: 1.5rem;
       }
     }
   }
