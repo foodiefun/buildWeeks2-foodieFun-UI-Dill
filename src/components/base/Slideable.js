@@ -21,12 +21,12 @@ export default class Slideable {
 
       if (this.index === newIndex) { // Newly selected, set up and execute in-transition.
         console.group(`${this.type} ${this.index}`);
-        this.slideIn();
+        this.slideIn(this.index, this.currentIndex);
         console.groupEnd();
       }
       if (this.index === this.currentIndex) { // Already on screen, set up and execute out-transition.
         console.group(`${this.type} ${this.index}`);
-        this.slideOut();
+        this.slideOut(this.index, newIndex);
         console.groupEnd();
       }
 

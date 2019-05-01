@@ -40,6 +40,7 @@
   },
   "dependencies": {
     "express": "^4.16.4",
+    "gsap": "^2.1.2",
     "normalize.css": "^8.0.1",
     "rxjs": "^6.5.1"
   }
