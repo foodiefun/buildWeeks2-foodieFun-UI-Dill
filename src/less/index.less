@@ -23,15 +23,20 @@ body {
   height: 100vh;
   position: absolute;
   font-family: 'Montserrat', sans-serif;
-
+  
   display: flex;
   flex-direction: column;
+
+  @media @tablet-large {
+    height: auto;
+  }
 
   h1, h2 {
     font-family: 'Courgette', cursive;
   }
 
   section.content-container {
+    height: 100%;
     position: relative;
     flex: 1;
     
@@ -43,7 +48,9 @@ body {
 
     @media @tablet-large {
       flex-direction: column;
-      margin-top: 3rem;
+      padding-bottom: 4rem;
+      width: 60%;
+      margin: auto;
     }
   }
 

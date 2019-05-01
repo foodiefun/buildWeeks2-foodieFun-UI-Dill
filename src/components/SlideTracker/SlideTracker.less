@@ -1,16 +1,15 @@
 section.tracker-container {
   position: relative;
-  //height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  // padding-right: 2%;
 
   @media @tablet-large {
-    height: auto;
-    padding: 0 0 4rem;
+    padding: 0 0;
     align-items: center;
     width: 100%;
+    margin-top: 4rem;
+    order: 2;
   }
 
   div.slide-tracker {
@@ -23,7 +22,7 @@ section.tracker-container {
     @media @tablet-large {
       flex-direction: row;
       height: auto;
-      width: 60%;
+      width: 100%;
     }
 
     ol.tracker-list {
