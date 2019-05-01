@@ -8,7 +8,7 @@ function slideOut (myIndex, newIndex) {
   this.element.style.cssText = 'position: absolute';
   TweenMax.to(this.element, 1, {
     [axis]: `${dir}%`,
-    clearProps:"all",
+    clearProps: 'all',
     onComplete: () => {
       this.element.classList.add('hidden');
     }
@@ -25,7 +25,7 @@ function slideIn (myIndex, oldIndex) {
   this.element.classList.remove('hidden');
   TweenMax.from(this.element, 1, {
     [axis]: `${dir}%`,
-    clearProps:"all"
+    clearProps: 'all'
   });
 
   console.log('entering');

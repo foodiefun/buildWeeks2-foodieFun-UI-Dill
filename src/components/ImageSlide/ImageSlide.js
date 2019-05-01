@@ -4,11 +4,12 @@ import Slideable from '../base/Slideable';
 function slideOut (myIndex, newIndex) {
   const dir = (myIndex < newIndex) ? -50 : 150;
   
+  //this.element.style.cssText = 'position: absolute';
   TweenMax.to(this.element, 1, {
-    left: `${dir}%`,
+    x: `${dir}%`,
+    clearProps: 'all',
     onComplete: () => {
       this.element.classList.add('hidden');
-      this.element.style.cssText = '';
     }
   });
 
@@ -22,10 +23,8 @@ function slideIn (myIndex, oldIndex) {
   
   this.element.classList.remove('hidden');
   TweenMax.from(this.element, 1, {
-    left: `${dir}%`,
-    onComplete: () => {
-      this.element.style.cssText = '';
-    }
+    x: `${dir}%`,
+    clearProps: 'all',
   });
 
   console.log('entering');
