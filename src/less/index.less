@@ -21,26 +21,29 @@
 body {
   width: 100vw;
   height: 100vh;
-  display: flex;
+  position: absolute;
   font-family: 'Montserrat', sans-serif;
 
-  @media @tablet-large {
-    flex-direction: column;
-  }
+  display: flex;
+  flex-direction: column;
 
   h1, h2 {
     font-family: 'Courgette', cursive;
   }
 
-  section.info-cta-container {
+  section.content-container {
     position: relative;
     flex: 1;
     
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
 
-    padding: 5% 3% 0;
+    padding: 0 3% 0;
+
+    @media @tablet-large {
+      flex-direction: column;
+    }
   }
 
   .hidden {
