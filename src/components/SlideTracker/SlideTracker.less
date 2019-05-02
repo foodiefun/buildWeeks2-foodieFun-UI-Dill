@@ -98,6 +98,25 @@ section.tracker-container {
           transform: rotate(90deg) scale(0.4);
         }
       }
+
+      li.backer-dot {
+        content: '';
+        position: absolute;
+        width: calc(2rem + 1px);
+        height: calc(2rem + 1px);
+        background: @primary;
+        border-radius: 100%;
+        list-style: none;
+        border: solid 8px @dark;
+
+        @media @phone-large {
+          transform: scale(0.8);
+        }
+
+        @media @phone-small {
+          transform: scale(0.6);
+        }
+      }
     }
 
     button.tracker-button {
