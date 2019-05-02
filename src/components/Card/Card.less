@@ -62,19 +62,18 @@
       }
     }
 
-    div {
+    .image-container {
       position: relative;
       z-index: 2;
-      margin: auto;
+      margin: 1rem auto;
       text-align: center;
-      padding: 1rem 0;
+      max-height: 16rem;
+      overflow: hidden;
+      border-radius: 0.5rem;
     
       img {
         max-width: 100%;
-        max-height: 12rem;
-        @media @tablet-large {
-          max-height: 16rem;
-        }
+        object-fit: cover;
       }
     }
 
