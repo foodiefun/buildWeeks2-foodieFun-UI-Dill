@@ -1,5 +1,5 @@
-import { BehaviorSubject } from 'rxjs';
-import { scan } from 'rxjs/operators';
+import { BehaviorSubject, interval } from 'rxjs';
+import { scan, throttle } from 'rxjs/operators';
 import { reducer } from './reducers';
 
 const initialState = {
@@ -12,7 +12,8 @@ const action = new BehaviorSubject({
 });
 
 export const store = action.pipe(
-  scan(reducer, initialState),
+  throttle(() => interval(800)),
+  scan(reducer, initialState)
 );
 
 
