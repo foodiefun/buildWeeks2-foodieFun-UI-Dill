@@ -6,14 +6,13 @@ function slideOut (myIndex, newIndex) {
   const dir = (myIndex < newIndex) ? -250 : 250;
 
   this.element.style.cssText = 'position: absolute';
-  TweenMax.to(this.element, 1, {
+  TweenMax.to(this.element, 0.6, {
     [axis]: `${dir}%`,
     clearProps: 'all',
     onComplete: () => {
       this.element.classList.add('hidden');
     }
   });
-  console.log('leaving');
 }
 
 function slideIn (myIndex, oldIndex) {
@@ -23,12 +22,11 @@ function slideIn (myIndex, oldIndex) {
   const dir = (myIndex < oldIndex) ? -250 : 250;
   
   this.element.classList.remove('hidden');
-  TweenMax.from(this.element, 1, {
+  TweenMax.from(this.element, 0.6, {
     [axis]: `${dir}%`,
     clearProps: 'all'
   });
 
-  console.log('entering');
 }
 
 export default (element, index, type) => {
