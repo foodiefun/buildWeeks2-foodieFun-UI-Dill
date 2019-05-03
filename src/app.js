@@ -6,18 +6,27 @@ import SlideTracker from './components/SlideTracker/SlideTracker';
 import { gotoIndex, incIndex, decIndex } from './stateManagement/actions';
 
 
-
-document.body.querySelectorAll('.card-track section.info-card')
-  .forEach((e, i) => {
+// The if statements are basically just a hack to prevent console errors when the about page is loaded.
+const cards = document.body.querySelectorAll('.card-track section.info-card');
+if (cards) {
+  cards.forEach((e, i) => {
     Card(e, i, "Card");
   });
+}
 
-document.body.querySelectorAll('section.image-container img')
-  .forEach((e, i) => {
+
+const imageContainer = document.body.querySelectorAll('section.image-container img');
+if (imageContainer) {
+  imageContainer.forEach((e, i) => {
     ImageSlide(e, i, "ImageSlide");
   });
+}
 
-new SlideTracker(document.body.querySelector('.slide-tracker'));
+const slideTracker = document.body.querySelector('.slide-tracker');
+if (slideTracker) {
+  new SlideTracker(slideTracker);
+}
+
 
 
 // setInterval(() => {

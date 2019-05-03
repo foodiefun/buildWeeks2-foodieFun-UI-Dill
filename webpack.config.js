@@ -23,7 +23,6 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'Webpack Starter Project',
       template: path.resolve('./src/index.html')
     }),
     new webpack.HotModuleReplacementPlugin()

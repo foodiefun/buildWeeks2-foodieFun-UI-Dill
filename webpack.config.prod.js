@@ -20,6 +20,10 @@ module.exports = {
       title: 'Webpack Starter Project',
       template: path.resolve('./src/index.html')
     }),
+    new HtmlWebpackPlugin({
+      template: path.resolve('./src/about.html'),
+      filename: 'about.html'
+    }),
     new MiniCssExtractPlugin({
       filename: '[name].css',
       chunkFilename: '[id].css'
