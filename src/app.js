@@ -1,6 +1,6 @@
 import './less/index.less';
 
-import { fromEvent, interval } from 'rxjs';
+import { fromEvent, interval, from } from 'rxjs';
 import { throttle } from 'rxjs/operators';
 import CSSRulePlugin from 'gsap/CSSRulePlugin';
 import { TweenMax } from 'gsap/TweenMax';
@@ -33,39 +33,59 @@ if (slideTracker) {
 }
 
 const nav = document.body.querySelector('nav');
+
 const navTray = document.body.querySelector('ul.nav-tray');
+const trayBacker = CSSRulePlugin.getRule('.nav-tray:before');
 
 const trayHandler = fromEvent(nav, 'click').pipe(
-  throttle(() => interval(800))
+  throttle(() => interval(500))
 );
 
 trayHandler.subscribe(() => {
-  const trayBacker = CSSRulePlugin.getRule('.nav-tray:before');
   if (navTray.classList.contains('hidden')) {
-    navTray.classList.remove('hidden');
-    TweenMax.from(navTray, 0.5, {
-      x: '-150%',
-      clearProps: 'all'
-    });
-    TweenMax.fromTo(trayBacker, 0.3, {
-      background: 'rgba(0, 0, 0, 0)',
-    }, {
-      background: 'rgba(0, 0, 0, 0.3)'
-    });
+    openTray();
   } else {
-    TweenMax.to(navTray, 0.5, {
-      x: '-150%',
-      clearProps: 'all',
-      onComplete: () => {
-        navTray.classList.add('hidden');
-      }
-    });
-    TweenMax.to(trayBacker, 0.3, {
-      background: 'rgba(0, 0, 0, 0)',
-      clearProps: 'all'
-    });
+    closeTray();
   }
 });
+
+const trayClose = fromEvent(navTray, 'click').pipe(
+  throttle(() => interval(500))
+);
+
+trayClose.subscribe((e) => {
+  const { srcElement, offsetX, offsetY } = e;
+  if (offsetX < 0 || offsetX > srcElement.offsetWidth || offsetY < 0 || offsetY > srcElement.offsetHeight) {
+    closeTray();
+  }
+});
+
+const openTray = () => {
+  navTray.classList.remove('hidden');
+  TweenMax.from(navTray, 0.5, {
+    x: '-150%',
+    clearProps: 'all'
+  });
+  TweenMax.fromTo(trayBacker, 0.3, {
+    background: 'rgba(0, 0, 0, 0)',
+  }, {
+    background: 'rgba(0, 0, 0, 0.3)'
+  });
+}
+
+const closeTray = () => {
+  TweenMax.to(navTray, 0.5, {
+    x: '-150%',
+    clearProps: 'all',
+    onComplete: () => {
+      navTray.classList.add('hidden');
+    }
+  });
+  TweenMax.to(trayBacker, 0.3, {
+    background: 'rgba(0, 0, 0, 0)',
+    clearProps: 'all'
+  });
+}
 
 // setInterval(() => {
 //   incIndex();
