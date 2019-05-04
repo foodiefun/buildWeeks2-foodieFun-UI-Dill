@@ -77,3 +77,79 @@ body {
     display: none;
   }
 }
+
+.nav-tray {
+  position: absolute;
+  top: 10rem;
+  left: 2rem;
+  background: @dark;
+  list-style: none;
+  z-index: 3;
+  width: 15rem;
+
+  @media @tablet {
+    top: 8rem;
+    width: 12rem;
+  }
+
+  @media @phone-large {
+    top: 6rem;
+  }
+
+  @media @phone-small {
+    top: 4rem;
+    left: 1rem;
+    width: 10rem;
+  }
+
+  &::before {
+    content: '';
+    position: fixed;
+    top: -10rem;
+    left: -2rem;
+    background: rgba(0, 0, 0, 0.30);
+
+    width: 130vw;
+    height: 120vh;
+    z-index: -1;
+
+    @media @tablet-large {
+      width: 150vw;
+    }
+
+    @media @phone-small {
+      width: 200vw;
+    }
+  }
+
+  li {
+    width: 100%;
+    text-align: center;
+    padding: 1rem;
+
+    border: solid 1px @light;
+    border-top: none;
+
+    &:first-child {
+      border-top: solid 1px @light;
+    }
+
+    a {
+      text-decoration: none;
+      color: @light;
+      font-size: 3.5rem;
+
+      @media @tablet {
+        font-size: 2.5rem;
+      }
+
+      @media @phone-large {
+        font-size: 2rem;
+      }
+
+      @media @phone-small {
+        font-size: 1.5rem;
+      }
+    }
+  }
+}

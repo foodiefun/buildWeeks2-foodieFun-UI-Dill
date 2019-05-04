@@ -1,5 +1,10 @@
 import './less/index.less';
 
+import { fromEvent, interval } from 'rxjs';
+import { throttle } from 'rxjs/operators';
+import CSSRulePlugin from 'gsap/CSSRulePlugin';
+import { TweenMax } from 'gsap/TweenMax';
+
 import Card from './components/Card/Card';
 import ImageSlide from './components/ImageSlide/ImageSlide';
 import SlideTracker from './components/SlideTracker/SlideTracker';
@@ -27,7 +32,40 @@ if (slideTracker) {
   new SlideTracker(slideTracker);
 }
 
+const nav = document.body.querySelector('nav');
+const navTray = document.body.querySelector('ul.nav-tray');
 
+const trayHandler = fromEvent(nav, 'click').pipe(
+  throttle(() => interval(800))
+);
+
+trayHandler.subscribe(() => {
+  const trayBacker = CSSRulePlugin.getRule('.nav-tray:before');
+  if (navTray.classList.contains('hidden')) {
+    navTray.classList.remove('hidden');
+    TweenMax.from(navTray, 0.5, {
+      x: '-150%',
+      clearProps: 'all'
+    });
+    TweenMax.fromTo(trayBacker, 0.3, {
+      background: 'rgba(0, 0, 0, 0)',
+    }, {
+      background: 'rgba(0, 0, 0, 0.3)'
+    });
+  } else {
+    TweenMax.to(navTray, 0.5, {
+      x: '-150%',
+      clearProps: 'all',
+      onComplete: () => {
+        navTray.classList.add('hidden');
+      }
+    });
+    TweenMax.to(trayBacker, 0.3, {
+      background: 'rgba(0, 0, 0, 0)',
+      clearProps: 'all'
+    });
+  }
+});
 
 // setInterval(() => {
 //   incIndex();
