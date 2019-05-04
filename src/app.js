@@ -35,7 +35,7 @@ if (slideTracker) {
 if (cards && imageContainer) {
   const autoSlide = setInterval(() => {
     incIndex();
-  }, 12000);
+  }, 10000);
   document.addEventListener('click', () => {
     clearInterval(autoSlide);
   });
