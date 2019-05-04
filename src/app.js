@@ -8,7 +8,7 @@ import { TweenMax } from 'gsap/TweenMax';
 import Card from './components/Card/Card';
 import ImageSlide from './components/ImageSlide/ImageSlide';
 import SlideTracker from './components/SlideTracker/SlideTracker';
-import { gotoIndex, incIndex, decIndex } from './stateManagement/actions';
+import { incIndex } from './stateManagement/actions';
 
 
 // The if statements are basically just a hack to prevent console errors when the about page is loaded.
@@ -30,6 +30,15 @@ if (imageContainer) {
 const slideTracker = document.body.querySelector('.slide-tracker');
 if (slideTracker) {
   new SlideTracker(slideTracker);
+}
+
+if (cards && imageContainer) {
+  const autoSlide = setInterval(() => {
+    incIndex();
+  }, 12000);
+  document.addEventListener('click', () => {
+    clearInterval(autoSlide);
+  });
 }
 
 const nav = document.body.querySelector('nav');
@@ -86,7 +95,3 @@ const closeTray = () => {
     clearProps: 'all'
   });
 }
-
-// setInterval(() => {
-//   incIndex();
-// }, 10000);
