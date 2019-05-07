@@ -1,0 +1,86 @@
+section.cta {
+  position: relative;
+  width: 70%;
+  min-width: 500px;
+  max-width: 650px;
+  background: linear-gradient(lighten(@dark, 5%), darken(@dark, 5%));
+  padding: 2rem 1.5rem;
+  color: @light;
+  border-radius: 1.5rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+
+  @media @tablet-large {
+    min-width: 0px;
+    margin-top: 4rem;
+    order: 3;
+    width: 100%;
+  }
+
+  @media @phone-large {
+    margin-top: 3rem;
+  }
+
+  @media @phone-small {
+    margin-top: 2rem;
+  }
+
+  h2 {
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 2rem;
+
+    @media @tablet {
+      font-size: 2rem;
+    }
+
+    @media @phone-large {
+      font-size: 1.5rem;
+    }
+
+    @media @phone-small {
+      font-size: 1.25rem;
+      margin-bottom: 1rem;
+    }
+  }
+
+  button {
+  font-size: 4rem;
+  font-weight: bold;
+  padding: 1.5rem;
+  border-radius: 2rem;
+  color: @dark;
+  background: linear-gradient(lighten(@primary, 3%), darken(@primary, 3%));
+  outline: none;
+  border: none;
+
+    @media @tablet-large {
+      font-size: 3rem;
+    }
+
+    @media @tablet {
+      font-size: 2.5rem;
+      padding: 1.25rem;
+    }
+
+    @media @phone-large {
+      font-size: 2rem;
+      padding: 1rem;
+    }
+
+    @media @phone-small {
+      font-size: 1.5rem;
+      padding: 0.75rem;
+    }
+
+    a {
+      text-decoration: none;
+      color: @dark;
+    }
+  }
+}

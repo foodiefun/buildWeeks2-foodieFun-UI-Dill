@@ -1,0 +1,155 @@
+@import (less) "../../node_modules/normalize.css/normalize.css";
+
+@import './variables.less';
+@import './header.less';
+@import './cta.less';
+
+@import './about.less';
+
+@import '../components/ImageSlide/image.less';
+@import '../components/Card/Card.less';
+@import '../components/SlideTracker/SlideTracker.less';
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+
+  &::before, &::after {
+    box-sizing: border-box;
+  }
+}
+
+html, body {
+  overflow-x: hidden;
+}
+
+body {
+  width: 100vw;
+  min-height: 100vh;
+  position: absolute;
+  font-family: 'Montserrat', sans-serif;
+  
+  display: flex;
+  flex-direction: column;
+  overflow-y: hidden;
+
+  h1, h2 {
+    font-family: 'Courgette', cursive;
+  }
+
+  section.content-container {
+    height: 100%;
+    position: relative;
+    flex: 1;
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4rem 3%;
+
+    width: 100vw;
+    /* I had a very odd bug when I introduced Greensock.  During tweens, many elements unrelated to the animation would shrink and shift
+       left by a small (but noticable) amount.  Still not sure why.  But setting their width to 100vw seems to solve it.  Particularly odd
+       and frustrating because the animation is entirely related to position, it should not affect the width of anything.*/
+    
+    @media @tablet-large {
+      flex-direction: column;
+      padding: 0 20%;
+      padding-bottom: 4rem;
+    }
+
+    @media @tablet {
+      padding: 0 12.5%;
+    }
+    
+    @media @phone-large {
+      padding: 0 5%;
+    }
+
+    @media @phone-small {
+      padding-bottom: 2rem;
+    }
+
+  }
+
+  .hidden {
+    display: none;
+  }
+}
+
+.nav-tray {
+  position: absolute;
+  top: 10rem;
+  left: 2rem;
+  background: @dark;
+  list-style: none;
+  z-index: 3;
+  width: 15rem;
+
+  @media @tablet {
+    top: 8rem;
+    width: 12rem;
+  }
+
+  @media @phone-large {
+    top: 6rem;
+  }
+
+  @media @phone-small {
+    top: 4rem;
+    left: 1rem;
+    width: 10rem;
+  }
+
+  &::before {
+    content: '';
+    position: fixed;
+    top: -10rem;
+    left: -2rem;
+    background: rgba(0, 0, 0, 0.30);
+
+    width: 130vw;
+    height: 140vh;
+    z-index: -1;
+
+    @media @tablet-large {
+      width: 150vw;
+    }
+
+    @media @phone-small {
+      width: 200vw;
+    }
+  }
+
+  li {
+    width: 100%;
+    text-align: center;
+    padding: 1rem;
+
+    border: solid 1px @light;
+    border-top: none;
+
+    &:first-child {
+      border-top: solid 1px @light;
+    }
+
+    a {
+      text-decoration: none;
+      color: @light;
+      font-size: 3.5rem;
+
+      @media @tablet {
+        font-size: 2.5rem;
+      }
+
+      @media @phone-large {
+        font-size: 2rem;
+      }
+
+      @media @phone-small {
+        font-size: 1.5rem;
+      }
+    }
+  }
+}

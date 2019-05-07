@@ -1,0 +1,50 @@
+.static-bg {
+  position: fixed;
+  height: 100%;
+
+  img {
+    min-height: 100%;
+  }
+}
+
+.about-card-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 2rem 6rem 0;
+
+  .about-card {
+    position: relative;
+    z-index: 2;
+    background: @dark;
+    color: @light;
+    width: 16rem;
+    border-radius: 1.5rem;
+    padding: 2rem;
+    margin: 2rem;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+
+    .about-name {
+      text-align: center;
+    }
+
+    .portrait {
+      text-align: center;
+      max-height: 12rem;
+      overflow: hidden;
+      width: 100%;
+      padding: 1rem;
+
+      img {
+        object-fit: scale-down;
+        border-radius: 200px;
+        height: 100%;
+      }
+    }
+
+    .about-title {
+      text-align: center;
+    }
+  }
+}
